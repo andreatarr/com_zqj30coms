@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>com_zqj30coms</name>
+	<author>Andrea Tarr</author>
+	<creationDate>September 2012</creationDate>
+	<license>GNU General Public License version 2 or later; see
+		LICENSE.txt</license>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<version>1.0</version>
+	<description>COM_ZQJ30COMS_XML_DESCRIPTION</description>
+
+	<install> <!-- Runs on install -->
+    	<sql>
+        	<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+  		</sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+    	<sql>
+        	<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+  		</sql>
+   </uninstall>
+   
+  <files folder="site">
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>zqj30coms.php</filename>
+	</files>  
+   <administration>
+   		<menu img="class:newsfeeds">COM_ZQJ30COMS</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_zqj30coms" view="zqj30coms" img="class:newsfeeds"
+				alt="Subscriptions/Subscriptions">COM_ZQJ30COMS</menu>
+			<menu link="option=com_categories&amp;extension=com_zqj30coms"
+				view="categories" img="class:newsfeeds-cat" 
+				alt="Subscriptions/Categories">Categories</menu>
+		</submenu>
+		
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>zqj30coms.php</filename>
+		</files>
+	</administration>
+</extension>
+		
+   

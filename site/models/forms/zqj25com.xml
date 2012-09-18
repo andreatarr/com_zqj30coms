@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<fields>
+	<fieldset>
+		<field name="subscription_terms" type="checkbox"
+			default="0" filter="bool"
+			label="COM_ZQJ30COMS_FORM_TERMS_LABEL"
+			desc="COM_ZQJ30COMS_FORM_TERMS_DESC"
+			required="true"
+			value="1"
+		/>
+	</fieldset>
+	</fields>
+</form>
