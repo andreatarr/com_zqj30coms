@@ -47,7 +47,7 @@ class JFormFieldModal_Zqj30coms extends JFormField
 		$db = JFactory::getDBO();
 		$db->setQuery(
 			'SELECT title' .
-			' FROM #__zqj25_zqj30coms' .
+			' FROM #__zqj30_zqj30coms' .
 			' WHERE id = '.(int) $this->value
 		);
 		$title = $db->loadResult();

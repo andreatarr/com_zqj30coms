@@ -1,8 +1,6 @@
 <?php
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.modellist');
-
 /**
  * Methods supporting a list of records.
  */
@@ -16,7 +14,7 @@ class Zqj30comsModelZqj30coms extends JModelList
 	 * @see		JController
 	 * @since	1.6
 	 */
-	public function __contruct($config = array())
+	public function __construct($config = array())
 	{	// @TODO Fill in fieldnames
 		if (empty($config['filter_fields'])) {
 			$config['filter_fields'] = array(
@@ -36,7 +34,7 @@ class Zqj30comsModelZqj30coms extends JModelList
 			);
 		}
 		
-		parent::__contruct($config);
+		parent::__construct($config);
 	}
 	
 	/**
@@ -116,7 +114,7 @@ class Zqj30comsModelZqj30coms extends JModelList
 				'a.publish_up, a.publish_down'
 			)
 		);
-		$query->from('`#__zqj25_zqj30coms` AS a');
+		$query->from($db->quoteName('#__zqj30_zqj30coms').' AS a');
 		
 		// Join over the users for the checked out user
 		$query->select('uc.name AS editor');
@@ -162,8 +160,8 @@ class Zqj30comsModelZqj30coms extends JModelList
 			if (stripos($search, 'id:') === 0) {
 				$query->where('a.id ='.(int) substr($search, 3));
 			} else {
-				$search = $db->Quote('%'.$db->getEscaped($search, true).'%');
-				$query->where('(a.title LIKE'.$search.' OR a.alias LIKE '.$search.')');
+				$search = $db->Quote('%'.$db->escape($search, true).'%');
+				$query->where('(a.title LIKE '.$search.' OR a.alias LIKE '.$search.')');
 			}
 		}
 		
@@ -173,8 +171,8 @@ class Zqj30comsModelZqj30coms extends JModelList
 		if ($orderCol == 'a.ordering' || $orderCol == 'category_title') {
 			$orderCol = 'c.title '.$orderDirn.', a.ordering';
 		}
-		$query->order($db->getEscaped($orderCol.' '.$orderDirn));
-		
+		$query->order($db->escape($orderCol.' '.$orderDirn));
+
 		return $query;
 		
 	}

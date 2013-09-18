@@ -17,7 +17,7 @@ class Zqj30comsCategories	extends JCategories
 {
 	public function __construct($options = array()) 
 	{
-		$options['table'] = '#_zqj25_zqj30coms';
+		$options['table'] = '#_zqj30_zqj30coms';
 		$options['extension'] = 'com_zqj30coms';
 		$options['statefield'] = 'published';
 		parent::__construct($options);

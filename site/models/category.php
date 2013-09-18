@@ -53,7 +53,7 @@ class Zqj30comsModelCategory extends JModelList
 
 		// Select required fields from the categories.
 		$query->select($this->getState('list.select', 'a.*'));
-		$query->from('`#__zqj25_zqj30coms` AS a');
+		$query->from('`#__zqj30_zqj30coms` AS a');
 		$query->where('a.access IN ('.$groups.')');
 		
 		// Filter by category.
@@ -84,7 +84,7 @@ class Zqj30comsModelCategory extends JModelList
 
 		// Filter by start and end dates. (note: quote method adds quotes around the field)
 		$nullDate = $db->quote($db->getNullDate());
-		$nowDate = $db->quote(JFactory::getDate()->toMySQL());
+		$nowDate = $db->quote(JFactory::getDate()->toSQL());
 
 		if ($this->getState('filter.publish_date')){
 			$query->where('(a.publish_up = ' . $nullDate . ' OR a.publish_up <= ' . $nowDate . ')');

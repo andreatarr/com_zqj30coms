@@ -82,7 +82,7 @@ class Zqj30comsModelZqj30com extends JModelItem
 				$case_when1 .= $c_id.' END as catslug';
 
 				$query->select($this->getState('item.select', 'a.*') . ','.$case_when.','.$case_when1);
-				$query->from('#__zqj25_zqj30coms AS a');
+				$query->from('#__zqj30_zqj30coms AS a');
 
 				// Join on category table.
 				$query->select('c.title AS category_title, c.alias AS category_alias, c.access AS category_access');

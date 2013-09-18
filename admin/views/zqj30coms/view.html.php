@@ -75,5 +75,46 @@ class Zqj30comsViewZqj30coms extends JViewLegacy
 		}
 		
 		JToolBarHelper::help('', '',JText::_('COM_ZQJ30COMS_ZQJ30COMS_HELP_LINK'));
+		
+		
+		JSubMenuHelper::setAction('index.php?option=com_zqj30coms&view=com_zqj30coms');
+		
+		JSubMenuHelper::addFilter(
+				JText::_('JOPTION_SELECT_PUBLISHED'),
+				'filter_state',
+				JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.state'), true)
+		);
+		
+		JSubMenuHelper::addFilter(
+				JText::_('JOPTION_SELECT_CATEGORY'),
+				'filter_category_id',
+				JHtml::_('select.options', JHtml::_('category.options', 'com_zqj30coms'), 'value', 'text', $this->state->get('filter.category_id'))
+		);
+		
+		JSubMenuHelper::addFilter(
+				JText::_('JOPTION_SELECT_ACCESS'),
+				'filter_access',
+				JHtml::_('select.options', JHtml::_('access.assetgroups'), 'value', 'text', $this->state->get('filter.access'))
+		);
+		
+	}
+	
+	/**
+	 * Returns an array of fields the table can be sorted by
+	 *
+	 * @return  array  Array containing the field name to sort by as the key and display text as value
+	 *
+	 * @since   3.0
+	 */
+	protected function getSortFields()
+	{
+		return array(
+				'a.ordering' => JText::_('JGRID_HEADING_ORDERING'),
+				'a.state' => JText::_('JSTATUS'),
+				'a.title' => JText::_('JGLOBAL_TITLE'),
+				'a.access' => JText::_('JGRID_HEADING_ACCESS'),
+				'a.hits' => JText::_('JGLOBAL_HITS'),
+				'a.id' => JText::_('JGRID_HEADING_ID')
+		);
 	}
 }

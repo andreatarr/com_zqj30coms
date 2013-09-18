@@ -32,16 +32,16 @@
 		<filename>zqj30coms.php</filename>
 	</files>  
    <administration>
-   		<menu img="class:newsfeeds">COM_ZQJ30COMS</menu>
+   		<menu>COM_ZQJ30COMS</menu>
 		<submenu>
 			<!--
 				Note that all & must be escaped to &amp; for the file to be valid
 				XML and be parsed by the installer
 			-->
-			<menu link="option=com_zqj30coms" view="zqj30coms" img="class:newsfeeds"
+			<menu link="option=com_zqj30coms" view="zqj30coms" 
 				alt="Subscriptions/Subscriptions">COM_ZQJ30COMS</menu>
 			<menu link="option=com_categories&amp;extension=com_zqj30coms"
-				view="categories" img="class:newsfeeds-cat" 
+				view="categories" 
 				alt="Subscriptions/Categories">Categories</menu>
 		</submenu>
 		

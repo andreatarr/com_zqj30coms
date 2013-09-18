@@ -1,2 +1,2 @@
-DROP TABLE IF EXISTS `#__zqj25_zqj30coms`;
+DROP TABLE IF EXISTS `#__zqj30_zqj30coms`;
 

@@ -167,7 +167,7 @@ class Zqj30comsModelZqj30com extends JModelAdmin
 			// Set ordering to the last item if not set
 			if (empty($table->ordering)) {
 				$db = JFactory::getDbo();
-				$db->setQuery('SELECT MAX(ordering) FROM #__zqj25_zqj30coms');
+				$db->setQuery('SELECT MAX(ordering) FROM #__zqj30_zqj30coms');
 				$max = $db->loadResult();
 		
 				$table->ordering = $max+1;

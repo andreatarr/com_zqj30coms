@@ -177,7 +177,7 @@ function Zqj30comsParseRoute($segments)
 		if ($found == 0) {
 			if ($advanced) {
 				$db = JFactory::getDBO();
-				$query = 'SELECT id FROM #__zqj25_zqj30coms WHERE catid = '.$vars['id'].' AND alias = '.$db->Quote(str_replace(':', '-', $segment));
+				$query = 'SELECT id FROM #__zqj30_zqj30coms WHERE catid = '.$vars['id'].' AND alias = '.$db->Quote(str_replace(':', '-', $segment));
 				$db->setQuery($query);
 				$id = $db->loadResult();
 			}

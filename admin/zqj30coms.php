@@ -10,6 +10,6 @@ if (!JFactory::getUser()->authorise('core.manage', 'com_zqj30coms')) {
 // Include dependancies
 jimport('joomla.application.component.controller');
 
-$controller = JController::getInstance('Zqj30coms');
+$controller = JControllerLegacy::getInstance('Zqj30coms');
 $controller->execute(JRequest::getCmd('task'));
 $controller->redirect();

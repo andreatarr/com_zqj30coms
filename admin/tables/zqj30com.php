@@ -14,7 +14,7 @@ class Zqj30comsTableZqj30com extends JTable
 	 */
 	public function __construct(&$db) 
 	{
-		parent::__construct('#__zqj25_zqj30coms', 'id', $db);
+		parent::__construct('#__zqj30_zqj30coms', 'id', $db);
 	}
 	
 	/**
@@ -49,13 +49,13 @@ class Zqj30comsTableZqj30com extends JTable
 		$user	= JFactory::getUser();
 		if ($this->id) {
 			// Existing item
-			$this->modified		= $date->toMySQL();
+			$this->modified		= $date->toSQL();
 			$this->modified_by	= $user->get('id');
 		} else {
 			// New item. Created and created_by field can be set by the user
 			// so we don't touch either of these if they are set.
 			if (!intval($this->created)) {
-				$this->created = $date->toMySQL();
+				$this->created = $date->toSQL();
 			}
 			if (empty($this->created_by)) {
 				$this->created_by = $user->get('id');
@@ -87,7 +87,7 @@ class Zqj30comsTableZqj30com extends JTable
 			return false;
 		}
 		// check for existing name
-		$query = 'SELECT id FROM #__zqj25_zqj30coms WHERE title = '.
+		$query = 'SELECT id FROM #__zqj30_zqj30coms WHERE title = '.
 			$this->_db->Quote($this->title).' AND catid = '.(int) $this->catid;
 		$this->_db->setQuery($query);
 		
